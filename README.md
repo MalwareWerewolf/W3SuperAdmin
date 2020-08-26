@@ -7,7 +7,7 @@ I was inspired by the **Warcraft Assistant tool** if you notice some similaritie
 ## Installation
 
 + [Go to this page](https://github.com/Cramenorn/W3SuperAdmin/releases) and download the latest version;
-+ Extract the zip files and run the **exe** (it needs admin privileges).
++ Extract the zip content and run the **exe** (it needs admin privileges).
 
 ## Building
 
