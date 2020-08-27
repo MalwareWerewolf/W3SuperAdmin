@@ -1,6 +1,4 @@
-﻿using MetroFramework.Forms;
-using MetroFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +15,7 @@ namespace W3SuperAdmin
 {
     public partial class PatchesForm : Form
     {
-        private static string workingDirectory = Environment.CurrentDirectory;
-        private string patchesDir = Directory.GetParent(workingDirectory).Parent.FullName + "\\Patches";
+        private string patchesDir = Directory.GetCurrentDirectory() + "\\Patches";
         private string _location;
         private Form _mainForm;
         private string _lblWarcraftVersionName;
@@ -39,9 +36,7 @@ namespace W3SuperAdmin
 
         private void PatchesForm_Load(object sender, EventArgs e)
         {
-            patchesList.View = View.Details;
             patchesList.Sorting = SortOrder.Ascending;
-
             this.FormClosed += new FormClosedEventHandler(PatchesForm_FormClosed);
 
             if (!Directory.Exists(patchesDir))
@@ -51,15 +46,11 @@ namespace W3SuperAdmin
 
             DirectoryInfo d = new DirectoryInfo(patchesDir);//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.zip"); //Getting zip files
+
             foreach (FileInfo file in Files)
             {
                 ListViewItem listViewItem = new ListViewItem(file.Name);
                 patchesList.Items.Add(listViewItem);
-            }
-
-            if (patchesList.Items.Count == 0)
-            {
-                SavePatchVersion.Enabled = false;
             }
         }
 
@@ -73,13 +64,6 @@ namespace W3SuperAdmin
 
             if (addPatchDialog.ShowDialog() == DialogResult.OK)
             {
-                // Display the ProgressBar control.
-                metroProgressBar1.Visible = true;
-                metroProgressBar1.Minimum = 1;
-                metroProgressBar1.Maximum = 1;
-                metroProgressBar1.Value = 1;
-                metroProgressBar1.Step = 50;
-
                 if (patchesList.Items.ContainsKey(addPatchDialog.FileName)) {
                     message = "The selected patch already exists, check if file name is correct and import the file again.";
                     title = "Exception thrown!";
@@ -92,12 +76,8 @@ namespace W3SuperAdmin
                 ListViewItem listViewItem = new ListViewItem(addPatchDialog.SafeFileName);
                 patchesList.Items.Add(listViewItem);
 
-                metroProgressBar1.PerformStep();
-
                 File.Move(addPatchDialog.FileName, patchesDir + "\\" + addPatchDialog.SafeFileName);
                 SavePatchVersion.Enabled = true;
-
-                metroProgressBar1.PerformStep();
 
                 message = "The patch has been added successfully!";
                 title = "Operation completed";

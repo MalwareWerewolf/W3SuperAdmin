@@ -1,5 +1,4 @@
-﻿using MetroFramework.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -102,7 +101,7 @@ namespace W3SuperAdmin.BLL
         {
             object keyValue = null;
 
-            if (groupBox.Controls[trackBarName] is MetroTrackBar trackBar)
+            if (groupBox.Controls[trackBarName] is TrackBar trackBar)
             {
                 if (keyVideo != null)
                 {

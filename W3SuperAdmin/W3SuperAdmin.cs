@@ -1,5 +1,4 @@
 ﻿using W3SuperAdmin.BLL;
-using MetroFramework.Forms;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -103,8 +102,6 @@ namespace W3SuperAdmin
                 key.Dispose();
             }
 
-            InitializeControlsProperties.SetButtonIcon(btnChangePatch, "Open_16x");
-            InitializeControlsProperties.SetButtonIcon(btnManageSettings, "Open_16x");
             w3SuperAdminFormBLL = new W3SuperAdminFormBLL();
             w3SuperAdminFormBLL.PatchesGroupBox = this.managePatchesGroupBox;
             w3SuperAdminFormBLL.CDKeyGroupBox = this.manageCDKeysGroupBox;

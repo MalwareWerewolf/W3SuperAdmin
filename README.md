@@ -8,7 +8,7 @@ I was inspired by the **Warcraft Assistant tool** if you notice some similaritie
 
 + [Go to this page](https://github.com/Cramenorn/W3SuperAdmin/releases) and download the latest version;
 + Install [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472);
-+ Extract the zip content and run the **exe** (it needs admin privileges).
++ Extract the zip content and run the **exe** file (it needs admin privileges).
 
 ## Building
 

@@ -22,7 +22,6 @@ namespace W3SuperAdmin
             this.FormClosed += new FormClosedEventHandler(PatchesForm_FormClosed);
 
             InitializeComponent();
-            InitializeControlsProperties.SetButtonIcon(btnClose, "ConfirmButton_16x");
         }
 
         void PatchesForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -34,7 +33,7 @@ namespace W3SuperAdmin
 
         private void gitHubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Cramenorn");
+            System.Diagnostics.Process.Start("https://github.com/Cramenorn/W3SuperAdmin");
         }
 
         private void btnClose_Click(object sender, EventArgs e)

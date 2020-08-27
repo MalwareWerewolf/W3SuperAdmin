@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatchesForm));
-            this.SavePatchVersion = new MetroFramework.Controls.MetroButton();
-            this.patchesList = new MetroFramework.Controls.MetroListView();
+            this.SavePatchVersion = new System.Windows.Forms.Button();
+            this.patchesList = new System.Windows.Forms.ListView();
             this.PatchVersion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.patchMenu = new System.Windows.Forms.MenuStrip();
             this.addPatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeSelectedPatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToTheMainWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.addPatchDialog = new System.Windows.Forms.OpenFileDialog();
             this.patchMenu.SuspendLayout();
             this.SuspendLayout();
@@ -48,23 +47,26 @@
             this.SavePatchVersion.Size = new System.Drawing.Size(158, 23);
             this.SavePatchVersion.TabIndex = 20;
             this.SavePatchVersion.Text = "Apply selected patch version";
-            this.SavePatchVersion.UseSelectable = true;
             this.SavePatchVersion.Click += new System.EventHandler(this.SavePatchVersion_Click);
             // 
             // patchesList
             // 
+            this.patchesList.BackColor = System.Drawing.SystemColors.Window;
             this.patchesList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.PatchVersion});
-            this.patchesList.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.patchesList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patchesList.ForeColor = System.Drawing.SystemColors.MenuText;
             this.patchesList.FullRowSelect = true;
+            this.patchesList.GridLines = true;
+            this.patchesList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.patchesList.HideSelection = false;
             this.patchesList.Location = new System.Drawing.Point(12, 38);
             this.patchesList.MultiSelect = false;
             this.patchesList.Name = "patchesList";
-            this.patchesList.OwnerDraw = true;
+            this.patchesList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.patchesList.Size = new System.Drawing.Size(487, 212);
             this.patchesList.TabIndex = 18;
             this.patchesList.UseCompatibleStateImageBehavior = false;
-            this.patchesList.UseSelectable = true;
             this.patchesList.View = System.Windows.Forms.View.Details;
             // 
             // PatchVersion
@@ -108,13 +110,6 @@
             this.returnToTheMainWindowToolStripMenuItem.Text = "Return to the main window";
             this.returnToTheMainWindowToolStripMenuItem.Click += new System.EventHandler(this.returnToTheMainWindowToolStripMenuItem_Click);
             // 
-            // metroProgressBar1
-            // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(12, 314);
-            this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(487, 23);
-            this.metroProgressBar1.TabIndex = 26;
-            // 
             // addPatchDialog
             // 
             this.addPatchDialog.FileName = "addPatchDialog";
@@ -123,8 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 369);
-            this.Controls.Add(this.metroProgressBar1);
+            this.ClientSize = new System.Drawing.Size(511, 302);
             this.Controls.Add(this.patchMenu);
             this.Controls.Add(this.SavePatchVersion);
             this.Controls.Add(this.patchesList);
@@ -145,14 +139,13 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton SavePatchVersion;
-        private MetroFramework.Controls.MetroListView patchesList;
+        private System.Windows.Forms.Button SavePatchVersion;
         private System.Windows.Forms.MenuStrip patchMenu;
         private System.Windows.Forms.ToolStripMenuItem addPatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeSelectedPatchToolStripMenuItem;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
         private System.Windows.Forms.OpenFileDialog addPatchDialog;
         private System.Windows.Forms.ColumnHeader PatchVersion;
         private System.Windows.Forms.ToolStripMenuItem returnToTheMainWindowToolStripMenuItem;
+        private System.Windows.Forms.ListView patchesList;
     }
 }

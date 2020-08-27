@@ -1,5 +1,4 @@
-﻿using MetroFramework.Controls;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +24,7 @@ namespace W3SuperAdmin.BLL
         }
 
         public void UpdateRegistryKeys(string keyVideoName, string keySoundName, string keyGameplayName, string keyMiscName, string keyStringName, GroupBox videoGroupBox, GroupBox soundGoupBox, 
-            GroupBox gameplayGroupBox, MetroTextBox textBoxCampaignProfile, MetroTextBox textBoxUserLocal)
+            GroupBox gameplayGroupBox, TextBox textBoxCampaignProfile, TextBox textBoxUserLocal)
         {
             object subKeyValue = null;
             string[] subKeyNames;
@@ -199,7 +198,7 @@ namespace W3SuperAdmin.BLL
         }
 
         public void LoadForm(string keyVideoName, string keySoundName, string keyGameplayName, string keyMiscName, string keyStringName, GroupBox videoGroupBox, GroupBox soundGoupBox, 
-            GroupBox gameplayGroupBox, MetroTextBox textBoxCampaignProfile, MetroTextBox textBoxUserLocal)
+            GroupBox gameplayGroupBox, TextBox textBoxCampaignProfile, TextBox textBoxUserLocal)
         {
             Key keyVideo = GetKeyValue(keyVideoName);
             Key keySound = GetKeyValue(keySoundName);

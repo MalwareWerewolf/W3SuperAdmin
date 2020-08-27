@@ -1,5 +1,4 @@
-﻿using MetroFramework.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +30,9 @@ namespace W3SuperAdmin
 
             InitializeComponent();
 
-            InitializeControlsProperties.MetroTrackBars(Controls.OfType<MetroTrackBar>());
+            InitializeControlsProperties.TrackBars(groupBoxVideoSettings.Controls.OfType<TrackBar>());
+            InitializeControlsProperties.TrackBars(groupBoxSoundSettings.Controls.OfType<TrackBar>());
+            InitializeControlsProperties.TrackBars(groupBoxGameplaySettings.Controls.OfType<TrackBar>());
             _settingsFormBll.LoadForm(keyVideoName, keySoundName, keyGameplayName, keyMiscName, keyStringName,
                 this.groupBoxVideoSettings, this.groupBoxSoundSettings, this.groupBoxGameplaySettings, this.textBoxCampaignProfile, this.textBoxUserLocal);
         }
@@ -87,6 +88,35 @@ namespace W3SuperAdmin
         }
 
         private void trackBarMouseScroll_Scroll(object sender, ScrollEventArgs e)
+        {
+            this.trackBarLabelMouse_Scroll.Text = string.Concat(trackBarLabelMouse_Scroll.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty)
+                .Replace("_", " "), " ", this.trackBarMouse_Scroll.Value.ToString(), "%");
+        }
+
+        private void trackBarGamma_Scroll(object sender, EventArgs e)
+        {
+            this.trackBarLabelGamma.Text = string.Concat(trackBarLabelGamma.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty), " ", this.trackBarGamma.Value.ToString(), "%");
+        }
+
+        private void trackBarSFX_Volume_Scroll(object sender, EventArgs e)
+        {
+            this.trackBarLabelSfx_Volume.Text = string.Concat(trackBarLabelSfx_Volume.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty)
+                .Replace("_", " "), " ", this.trackBarSFX_Volume.Value.ToString(), "%");
+        }
+
+        private void trackBarMusic_Volume_Scroll(object sender, EventArgs e)
+        {
+            this.trackBarLabelMusic_Volume.Text = string.Concat(trackBarLabelMusic_Volume.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty)
+                .Replace("_", " "), " ", this.trackBarMusic_Volume.Value.ToString(), "%");
+        }
+
+        private void trackBarKey_Scroll_Scroll(object sender, EventArgs e)
+        {
+            this.trackBarLabelKey_Scroll.Text = string.Concat(trackBarLabelKey_Scroll.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty)
+                .Replace("_", " "), " ", this.trackBarKey_Scroll.Value.ToString(), "%");
+        }
+
+        private void trackBarMouse_Scroll_Scroll(object sender, EventArgs e)
         {
             this.trackBarLabelMouse_Scroll.Text = string.Concat(trackBarLabelMouse_Scroll.Name.Replace(SettingsFormBLL.baseTrackBarLabelName, string.Empty)
                 .Replace("_", " "), " ", this.trackBarMouse_Scroll.Value.ToString(), "%");

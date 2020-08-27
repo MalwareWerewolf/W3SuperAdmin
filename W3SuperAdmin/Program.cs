@@ -1,5 +1,4 @@
-﻿using MetroFramework.Forms;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,17 +17,6 @@ namespace W3SuperAdmin
         [STAThread]
         static void Main()
         {
-            RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Blizzard Entertainment\Warcraft III\Video");
-
-            if (key == null) {
-                string message = "The Warcraft III Registry Key is missing, install and launch the game to avoid this error.";
-                string title = "Warcraft III - Admin";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
-
-                return;
-            }
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
