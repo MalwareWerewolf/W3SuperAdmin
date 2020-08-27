@@ -4,15 +4,12 @@ W3SuperAdmin is a Desktop application for Windows, you can manage different sett
 
 I was inspired by the **Warcraft Assistant tool** if you notice some similarities.
 
-<<<<<<< HEAD
 ## Installation
 
 + [Go to this page](https://github.com/Cramenorn/W3SuperAdmin/releases) and download the latest version;
 + Install [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472);
 + Extract the zip content and run the **exe** file (it needs admin privileges).
 
-=======
->>>>>>> b76dccd1d14f8acf8f613222c37666bfa6332605
 ## Building
 
 To build and run this project you need [Visual Studio 2019](https://visualstudio.microsoft.com/vs/), the [.NET Desktop development](https://visualstudio.microsoft.com/vs/features/net-development/) and [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472).
