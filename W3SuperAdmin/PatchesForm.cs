@@ -89,9 +89,9 @@ namespace W3SuperAdmin
 
         private void SavePatchVersion_Click(object sender, EventArgs e)
         {
-            string patchVersion = patchesList.Items[patchesList.FocusedItem.Index].Text;
+            string patchVersion = patchesList.FocusedItem != null ? patchesList.Items[patchesList.FocusedItem.Index].Text : null;
 
-            if (patchVersion == null || patchVersion == string.Empty) {
+            if (patchVersion == null) {
                 message = "Add a patch and select it from the list.";
                 title = "Operation failed";
 
