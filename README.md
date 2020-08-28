@@ -18,5 +18,9 @@ To build and run this project you need [Visual Studio 2019](https://visualstudio
 
 These are just some tips that I want share if you want to fork and use the project: 
 
-+ In the **Settings form** you should mantain the same name format between all controls;
-+ It's better to put the application logic inside the **BLL** from the moment it serves as an intermediary for data exchange with the presentation layer.
++ if you need to reinitialize the **Registry Keys**, you need to delete the Warcraft III folder in the **Registry Key editor** and launch the game. The path is the following **Computer\HKEY_CURRENT_USER\Software\Blizzard Entertainment\Warcraft III** ;
++ in the **Settings form** you should mantain the same name format between all controls;
++ it's better to put the application logic inside the **BLL** from the moment it serves as an intermediary for data exchange with the presentation layer.
+
+## Watch it in action on Youtube
+[![youtube](https://i9.ytimg.com/vi/xipiO_RvgyA/mqdefault.jpg?sqp=CMjxo_oF&rs=AOn4CLAAjlORDQ_UHOPQ-kfuLvPA8-ff5g)](https://www.youtube.com/watch?v=xipiO_RvgyA)
